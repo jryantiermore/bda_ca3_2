@@ -12,8 +12,8 @@ classifier_blue = None
 classifier_green = None
 
 try:
-    classifier_blue = FaceClassifier(model_path="/models/blue.pkl")
-    classifier_green = FaceClassifier(model_path="/models/green.pkl")
+    classifier_blue = FaceClassifier(model_path="/models/blue.pkl", orientations=9)
+    classifier_green = FaceClassifier(model_path="/models/green.pkl", orientations=6)
     print("Blue and Green models loaded.")
 except FileNotFoundError:
     print("One or both models missing.")

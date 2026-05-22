@@ -34,4 +34,4 @@ jobs:
           no-cache: true
           provenance: false
           tags: |
-            ghcr.io/jryantiermore/bda_ca3_2:v2
+            ghcr.io/jryantiermore/bda_ca3_2:v3
