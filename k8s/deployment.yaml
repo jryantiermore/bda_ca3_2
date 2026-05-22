@@ -1,0 +1,39 @@
+#this is the latest ver of deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-api
+  namespace: flask-faceapp
+  labels:
+    app: flask-api
+  annotations:
+    redeploy: "2026-05-19-1039"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-api
+  template:
+    metadata:
+      annotations:
+        redeploy: "2026-05-19-2245"
+      labels:
+        app: flask-api
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+        - name: flask-api
+          image: ghcr.io/jryantiermore/bd-arch-ca3:v3-22052026
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+          env:
+            - name: PYTHONUNBUFFERED
+              value: "1"
+          volumeMounts:
+            - name: models-volume
+              mountPath: /models
+      volumes:
+        - name: models-volume
+          emptyDir: {}
