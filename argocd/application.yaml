@@ -7,8 +7,8 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/jryantiermore/BD-Arch-CA3.git
-    targetRevision: bdarch
+    repoURL: https://github.com/jryantiermore/bda_ca3_2.git
+    targetRevision: main
     path: k8s
 
   destination:
