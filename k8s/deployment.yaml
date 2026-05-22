@@ -31,9 +31,3 @@ spec:
           env:
             - name: PYTHONUNBUFFERED
               value: "1"
-          volumeMounts:
-            - name: models-volume
-              mountPath: /models
-      volumes:
-        - name: models-volume
-          emptyDir: {}
