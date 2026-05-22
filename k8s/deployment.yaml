@@ -24,10 +24,19 @@ spec:
         - name: regcred
       containers:
         - name: flask-api
-          image: ghcr.io/jryantiermore/bda_ca3_2:v1
+          image: ghcr.io/jryantiermore/bda_ca3_2:v2
           imagePullPolicy: Always
           ports:
             - containerPort: 5000
           env:
             - name: PYTHONUNBUFFERED
               value: "1"
+          volumeMounts:
+            - name: models-volume
+              mountPath: /models
+      volumes:
+        - name: models-volume
+          hostPath:
+            path: /opt/CA3JR/models
+            type: Directory
+
