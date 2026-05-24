@@ -24,7 +24,7 @@ spec:
         - name: regcred
       containers:
         - name: flask-api
-          image: ghcr.io/jryantiermore/bda_ca3_2:v3
+          image: ghcr.io/jryantiermore/bda_ca3_2:v4
           imagePullPolicy: Always
           ports:
             - containerPort: 5000

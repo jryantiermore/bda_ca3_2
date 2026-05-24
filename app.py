@@ -40,6 +40,16 @@ def predict_green():
     return run_prediction(classifier_green)
 
 
+#Health check endpoint
+@app.route("/health", methods=["GET"])
+def health():
+    return jsonify({
+        "status": "healthy",
+        "blue_model": classifier_blue is not None,
+        "green_model": classifier_green is not None
+    }), 200
+
+
 # function to avoid duplication
 def run_prediction(model):
     if model is None:
