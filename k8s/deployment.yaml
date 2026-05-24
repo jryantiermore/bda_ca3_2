@@ -34,9 +34,15 @@ spec:
           volumeMounts:
             - name: models-volume
               mountPath: /models
+            - name: data-volume
+              mountPath: /app/data
       volumes:
         - name: models-volume
           hostPath:
             path: /opt/CA3JR/models
+            type: Directory
+        - name: data-volume
+          hostPath:
+            path: /opt/CA3JR/data
             type: Directory
 
